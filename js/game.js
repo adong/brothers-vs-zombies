@@ -47,7 +47,7 @@
   const cardImg = (id) => (BVZ.CARDS[id].hero ? faces[id] : icons[id]);
 
   const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
-  document.title = TITLE;
+  document.title = `${TITLE} · Teddy & Tommy`;
   $('logo').innerHTML = esc(TITLE).replace(/\bvs\.?(?=\s)/i, '<em>$&</em>');
   $('meterHead').src = icons.zombie;
 

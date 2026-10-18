@@ -2,6 +2,10 @@
 
 [![Brothers vs Zombies title screen](docs/screenshot.jpg)](https://adong.github.io/brothers-vs-zombies/)
 
+Defend the backyard cookies from silly zombies with hoops, ice-cream stands and ✌️ shooters. 15 levels.
+
+**中文：** 用篮筐、冰淇淋摊和 ✌️ 发射器挡住捣蛋僵尸，保卫后院的饼干。15 关。
+
 Press **?** any time (or tap the round **?** button on the left edge) to see the keys. The game waits while you look.
 Tap the language button under it (the A文 icon) to switch between English and 中文; the dashboard and every game remember the choice.
 
@@ -13,7 +17,7 @@ ice cream stands, basketball shooters and punching bags to keep them away. Nobod
 There are no image, model or audio files. The lawn, the house, the defenders and the mini-trains are boxes, spheres and
 canvas textures, the people come from the shared kit (`kit/`), and every sound is synthesised.
 
-The working title lives in one constant, `window.BVZ_TITLE` in `js/title.js`. Change it there and the page title, the
+The name lives in one constant, `window.BVZ_TITLE` in `js/title.js`. Change it there and the page title, the
 logo and the result screens follow.
 
 ## Play
