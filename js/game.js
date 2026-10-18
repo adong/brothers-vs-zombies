@@ -138,7 +138,10 @@
     persist();
     refreshTitle();
     if (G.mode === 'demo' && G.sim) {
+      // the demo behind the menu swaps brothers too: you on the porch, the other one as the buddy
       G.sim.brother = save.brother;
+      G.sim.buddy = buddyOf(save.brother);
+      if (G.sim.comp) G.sim.comp.who = G.sim.buddy;
       view.setLevel(G.sim);
     }
   }

@@ -389,17 +389,17 @@
     }
     // porch, table and the cookie jar the zombies are after
     const wood = mat('#b9814f');
-    box(1.6, 0.25, 4.2, wood, 4.3, 0.125, 0, house);
+    box(1.6, 0.25, 5.0, wood, 4.3, 0.125, 0.3, house);
     // a striped awning over the door (no porch roof: it would hide the cookie jar from the camera)
-    const awning = new T.Mesh(new T.BoxGeometry(0.9, 0.08, 1.9), new T.MeshStandardMaterial({ map: stripes('#ff6b6b', '#ffffff', 10), roughness: 0.7 }));
-    awning.position.set(3.95, 2.75, 0);
+    const awning = new T.Mesh(new T.BoxGeometry(0.8, 0.08, 1.5), new T.MeshStandardMaterial({ map: stripes('#ff6b6b', '#ffffff', 10), roughness: 0.7 }));
+    awning.position.set(3.95, 2.9, 0);
     awning.rotation.z = -0.35;
     house.add(awning);
     const jar = cookieJar();
-    jar.position.set(4.25, 0.25 + 0.75, 1.4);
+    jar.position.set(4.25, 0.25 + 0.75, 2.2);
     house.add(jar);
-    box(0.7, 0.06, 0.7, wood, 4.25, 0.95, 1.4, house);
-    cyl(0.05, 0.05, 0.7, wood, 4.25, 0.6, 1.4, house, 6);
+    box(0.7, 0.06, 0.7, wood, 4.25, 0.95, 2.2, house);
+    cyl(0.05, 0.05, 0.7, wood, 4.25, 0.6, 2.2, house, 6);
     if (world === 'night') {
       const lamp = new T.Sprite(new T.SpriteMaterial({ map: Kit.gfx.glowTexture(), color: '#ffd27a', transparent: true, blending: T.AdditiveBlending, depthWrite: false }));
       lamp.scale.set(2.6, 2.6, 1);
@@ -490,8 +490,8 @@
     return {
       group: yard,
       jar,
-      porch: new T.Vector3(-2.7, 0.25, -0.35),
-      jarPos: new T.Vector3(-6.8 + 4.25, 1.2, 1.4),
+      porch: new T.Vector3(-2.55, 0.25, 1.0), // you stand here, out from under the awning so the camera sees you
+      jarPos: new T.Vector3(-6.8 + 4.25, 1.2, 2.2),
       update: (t) => anim.forEach((f) => f(t)),
     };
   }

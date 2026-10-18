@@ -1185,7 +1185,7 @@
       const v = zs.get(zid);
       if (!v || !yard) return;
       loser = { v, t: 0, from: v.root.position.clone(), to: yard.jarPos.clone().add(new T.Vector3(0.9, -1.2, 0.4)) };
-      cam.focus = new T.Vector3(-1.9, 0.9, 1.5);
+      cam.focus = new T.Vector3(-2.0, 0.9, 2.1);
       cam.focusDist = 0.5;
       cam.fc = null;
     }
