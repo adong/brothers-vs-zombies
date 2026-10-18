@@ -197,7 +197,8 @@
   // Comic word bursts: POW! BOP! POP! BOING! POOF! ...
   const burstColors = { 'POW!': '#ffd21f', 'BOP!': '#7fe0ff', 'BONK!': '#ffd21f', 'POP!': '#ffffff', 'BOING!': '#8cff7a', 'POOF!': '#ffe680', 'SWISH!': '#ffb02e', 'WHOOSH!': '#bfe6ff', 'YAY!': '#ff9bd2', 'PLINK!': '#d0d8ff', 'BAM!': '#ff8a5c', 'TOOT TOOT!': '#ffe066' };
   function burstTexture(word) {
-    return memo('burst' + word, () => {
+    const lang = window.Kit.lang ? Kit.lang.get() : 'en';
+    return memo('burst' + lang + word, () => {
       const [c, g] = makeCanvas(256, 160);
       g.translate(128, 80);
       g.beginPath();
@@ -212,14 +213,15 @@
       g.lineWidth = 6;
       g.strokeStyle = '#1b1a22';
       g.stroke();
-      g.font = `${word.length > 6 ? 30 : 42}px ${FONT}`;
+      const text = window.Kit.lang ? Kit.lang.t(word) : word; // 中文 from js/zh.js
+      g.font = `${lang === 'zh' ? 'bold ' : ''}${text.length > 6 ? 30 : 42}px ${FONT}`;
       g.textAlign = 'center';
       g.textBaseline = 'middle';
       g.lineWidth = 8;
       g.strokeStyle = '#ffffff';
-      g.strokeText(word, 0, 4);
+      g.strokeText(text, 0, 4);
       g.fillStyle = '#e8331f';
-      g.fillText(word, 0, 4);
+      g.fillText(text, 0, 4);
       return toTexture(c);
     });
   }

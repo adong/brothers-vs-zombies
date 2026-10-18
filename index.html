@@ -188,6 +188,10 @@
     .world h3 { width: 90px; font-size: 12px; }
     .world h3 b { font-size: 22px; }
   }
+  /* 中文: Bungee has no Chinese, so the system font fills in; ask it for its boldest weight (Bungee itself stays as it is) */
+  .lang-zh .btn, .lang-zh h1.logo, .lang-zh #banner, .lang-zh .toast, .lang-zh #result h2, .lang-zh #pause h2,
+  .lang-zh .pick span, .lang-zh .world h3, .lang-zh #buddyBtn span, .lang-zh .newcard b { font-weight: 900; font-synthesis: none; }
+  .lang-zh .card.new::after { content: '新'; }
   body.calm *, body.calm *::before, body.calm *::after { animation: none !important; transition: none !important; }
 </style>
 </head>
@@ -214,7 +218,7 @@
 <div id="flyers"></div>
 
 <div id="title" class="screen">
-  <h1 class="logo" id="logo">Brothers <em>vs</em> Zombies</h1>
+  <h1 class="logo" id="logo" data-no-lang>Brothers <em>vs</em> Zombies</h1>
   <div class="sub">Save the cookies! 🍪</div>
   <div class="who">
     <button class="pick teddy" data-who="teddy"><img alt="Teddy"><span>TEDDY</span></button>
@@ -236,7 +240,7 @@
   <div class="panel">
     <h2>PAUSED</h2>
     <div class="row">
-      <button class="btn go" id="btnResume">▶ PLAY</button>
+      <button class="btn go" id="btnResume" data-zh="▶ 继续">▶ PLAY</button>
       <button class="btn small" id="btnRestart">↻ AGAIN</button>
       <button class="btn small" id="btnPauseLevels">LEVELS</button>
     </div>
@@ -265,6 +269,7 @@
 <script src="kit/roster.js"></script>
 <script src="kit/portraits.js"></script>
 <script src="kit/sound.js"></script>
+<script src="kit/lang.js"></script>
 <script src="kit/help.js"></script>
 <script src="js/title.js"></script>
 <script src="js/units.js"></script>
@@ -276,5 +281,6 @@
 <script src="js/view.js"></script>
 <script src="js/game.js"></script>
 <script src="js/keys.js"></script>
+<script src="js/zh.js"></script>
 </body>
 </html>

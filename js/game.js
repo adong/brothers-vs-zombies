@@ -850,7 +850,7 @@
     pointer(type, x, y) {
       // drive the canvas like a finger: game.pointer('down', 300, 400)
       const ev = new PointerEvent('pointer' + type, { clientX: x, clientY: y, bubbles: true, pointerType: 'touch', pointerId: 7 });
-      (type === 'down' ? canvas : window).dispatchEvent(ev);
+      canvas.dispatchEvent(ev); // bubbles up to the window listeners; the kit's ? and 中文 buttons expect a Node as the target
     },
     // close-up camera for screenshots: game.peek(2, 4) looks at lane 2, cell 4; game.peek() goes back
     peek(row, col, k = 0.42) {

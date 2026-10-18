@@ -3,6 +3,7 @@
 [![Brothers vs Zombies title screen](docs/screenshot.jpg)](https://adong.github.io/brothers-vs-zombies/)
 
 Press **?** any time (or tap the round **?** button on the left edge) to see the keys. The game waits while you look.
+Tap **中文 / EN** under it to switch between English and 中文 (the dashboard and every game remember the choice).
 
 A lane tower-defense game starring Teddy and Tommy, built with Claude Code from plain JavaScript and Three.js.
 Silly, grumpy cartoon zombies shuffle across the backyard because they want the family's cookies. Teddy and Tommy build
@@ -213,6 +214,8 @@ js/models.js        the yard for each world, defenders, hats and props, mini-tra
 js/sfx.js           the game's own sounds on Kit.sound.tone / hiss
 js/view.js          the 3D view: keeps a model for everything in the sim, poses, effects, camera fit, win/lose scenes
 js/game.js          screens, HUD, input, saving, the main loop, window.game
+js/keys.js          the keys the ? panel shows (Kit.help)
+js/zh.js            中文: the dictionary and rules for Kit.lang (the word bursts on the lawn use it too)
 tools/check.js      the headless check (node tools/check.js)
 kit/                copy of ~/claude-games/kit (python3 ../kit/tools/sync.py .); edit the kit there, not here
 dist/brothers-vs-zombies.html   the single-page build
